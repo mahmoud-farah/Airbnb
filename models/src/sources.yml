@@ -1,9 +1,13 @@
 version: 2
 
 sources:
-  - name: raw
+  - name: bronze
+    catalog: dev
     schema: bronze
     tables:
       - name: titanic
-        identifier: raw_titanic
+      - name: iris
+      - name: mtcars
+
+        
        
