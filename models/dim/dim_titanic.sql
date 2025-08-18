@@ -1,16 +1,3 @@
--- models/dim/dim_titanic.sql
-
-SELECT
-  PassengerId,
-  Survived,
-  Pclass,
-  Name,
-  Sex,
-  Age,
-  SibSp,
-  Parch,
-  Ticket,
-  Fare,
-  Cabin,
-  Embarked
-FROM {{ source('bronze', 'titanic') }}
+{{config(materialized='table', file_format='parquet', location_root='/Volumes/dev/bronze/test_volume/titanic.parquet')}}
+SELECT *
+FROM {{ source('datalake', 'titanic') }}  

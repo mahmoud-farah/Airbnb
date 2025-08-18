@@ -20,8 +20,8 @@ models:
   dbt_databricks_demo:
     src:
       +materialized: table
-      load_all_sources:
-        +pre-hook: "{{ create_volume_sources() }}"
+      
     dim:
       +materialized: table
       +schema: silver
+

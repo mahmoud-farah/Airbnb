@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: datalake
+    schema: bronze
+    catalog: dev
+    tables:
+      - name: iris
+        external:
+          location: '/Volumes/dev/bronze/test_volume/iris.parquet'
+          file_format: parquet
+      
+      - name: titanic
+        external:
+          location: '/Volumes/dev/bronze/test_volume/titanic.parquet'
+          file_format: parquet
+
+      - name: mtcars
+        external:
+          location: '/Volumes/dev/bronze/test_volume/mtcars.parquet'
+          file_format: parquet

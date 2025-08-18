@@ -1,1 +1,0 @@
-SELECT 'load_all_sources complete' AS status

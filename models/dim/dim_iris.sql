@@ -1,9 +1,5 @@
 -- models/dim/dim_iris.sql
+{{config(materialized='table', file_format='parquet', location_root='/Volumes/dev/bronze/test_volume/iris.parquet')}}
 
-SELECT
-  `sepal.length`,
-  `sepal.width`,
-  `petal.length`,
-  `petal.width`,
-  variety
-FROM {{ source('bronze', 'iris') }}
+SELECT *
+FROM {{ source('datalake', 'iris') }}  

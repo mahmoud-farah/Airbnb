@@ -1,16 +1,4 @@
 -- models/dim/dim_mtcars.sql
-
-SELECT
-  model,
-  mpg,
-  cyl,
-  disp,
-  hp,
-  drat,
-  wt,
-  qsec,
-  vs,
-  am,
-  gear,
-  carb
-FROM {{ source('bronze', 'mtcars') }}
+{{config(materialized='table', file_format='parquet', location_root='/Volumes/dev/bronze/test_volume/mtcars.parquet')}}
+SELECT *
+FROM {{ source('datalake', 'mtcars') }}  
